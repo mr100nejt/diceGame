@@ -3,6 +3,7 @@ var text ="";
 var counter = 0;
 	var sucess = 0
   var s = 6; 
+  var fCounter = 1;
 function dice(sideNumber)
 {
 
@@ -41,18 +42,18 @@ function featOfStrength(r1)
 		} 
 
 		 
-		let userRoll = dice(6)
-		let action = r1-userRoll
+		let userRollStr = dice(6)
+		let action = r1-userRollStr
 		switch(p1)
 		{
 			case "roll":
 				
-				window.alert("your roll was " + userRoll )
+				window.alert("your roll was " + userRollStr )
 				counter++; 
 				
-			if(userRoll===6)
+			if(userRollStr===6)
 				{
-					userRoll = 6
+					userRollStr = 6
 					action; 
 				}	
 			else if(action>0)
@@ -65,7 +66,7 @@ function featOfStrength(r1)
 	if (action <= 0)		
 		{
 				window.alert("you struggle to lift the rock and you succed. As door at the end of the arena opens and you walk through")
-			delete counter; 
+			counter = 0; 
 			featOfSkill(1)
 			
 		}
@@ -77,7 +78,7 @@ function featOfStrength(r1)
 
  function featOfSkill(r1)
 	{
-
+		delete counter; 
 
 		if (counter === 0)
 		{
@@ -91,18 +92,18 @@ function featOfStrength(r1)
 		} 
 
 		 
-		let userRoll = dice(s)
-		let action = r1-userRoll
+		let userRollS = dice(s)
+		let action = r1-userRollS
 		switch(p2)
 		{
 			case "roll":
 				
-				window.alert("your roll was " + userRoll )
+				window.alert("your roll was " + userRollS )
 				counter++; 
 				
-			if(userRoll===6)
+			if(userRollS===6)
 				{
-					userRoll = 6
+					userRollS = 6
 					action; 
 				}	
 			else if(action>0)
@@ -137,8 +138,8 @@ function featOfStrength(r1)
 		if(sucess >= 3)
 			{
 				window.alert("well done. another door opens")	
-				delete counter;
-				return; 
+				
+				testOfKnowlege() 
 			}
 }
 
@@ -149,52 +150,131 @@ function testOfKnowlege()
 		if (counter === 0)
 		{
 		window.alert("you see an old man with a blank canvas")
-		var p1 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
+		var p3 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
 		
 		}
 
-		else
-		{
-			p1 = prompt("you were close but not quite. try again. (roll")
-			
-		} 
+		
 
 		 
-		let userRoll =dice(100).toString
-		let userRoll2 = dice(100).toString 
-		let action = userRoll+userRoll2
+		let userRollK =dice(100)
+		let userRollK2 = dice(100)
+		let toString = userRollK.toString()
+		let toString2 = userRollK2.toString()
+		let action = toString+toString2
 		
-		switch(p1)
+		switch(p3)
 		{
 			case "roll":
 				
-				window.alert(userRoll)
-				window.alert(userrRoll2)
-				var p2 = prompt("now is" action "happy")
+				window.alert("your roll was"+userRollK)
+				window.alert("your roll was"+userRollK2)
+				var p4 = prompt("now is"+ action+ "happy")
 				counter++; 
 				
-	switch(p2)
+	switch(p4)
 		{
-			case"yes"
-			if()
+			case"yes":
+				
+				if(happy(action)==="happy")
+					{
+						window.alert("happy")
+					}
+				else 
+					{
+						window.alert("try again")
+						return testOfKnowlege()	
+						
+					}
+			break;
+		case"no":
+			 if(happy(action)==="unhappy")
+				{
+					happy(action)
+				}
+			else 
+					{
+						window.alert("try again")
+						return testOfKnowlege()	
+					}
 		}
-
-
+				
 		
-		}	
-	if (action <= 0)		
-		{
-				window.alert("you struggle to lift the rock and you succed. As door at the end of the arena opens and you walk through")
-			delete counter; 
-			featOfSkill(1)
-			
 		}
-	else
-		{		
-			featOfStrength(action)
-		}
-	}
+}
 
+ 	
+ 
+		
+
+	function happy(n1)
+	{
+		
+		var output = [],
+		 stringNumber = n1.toString();
+		var len = stringNumber.length;
+		
+			
+			
+
+		for (var i = 0;  i < stringNumber.length; i++)
+				
+			{
+				output.push(+stringNumber.charAt(i));
+			}
+			 if(output.length ===3)
+				{
+					var ns1 = output[0]
+					var ns2 = output[1]
+					var	ns3 = output[2]
+					var nSquared3 = Math.pow(ns3,2)
+					var nSquared1 = Math.pow(ns1,2);
+					var nSquared2 = Math.pow(ns2,2);
+					var addSquare = nSquared1+nSquared2+nSquared3; 
+					fCounter++;
+				}
+			if(output.length<2)
+			{
+				var ns1 = output[0]
+				var nSquared1 = Math.pow(ns1,2);
+				var addSquare = nSquared1;
+				fCounter++;
+			}
+			if(output.length===2)
+		{
+		
+		var ns1 = output[0]
+		var	ns2 = output[1]
+		var nSquared1 = Math.pow(ns1,2);
+		var nSquared2 = Math.pow(ns2,2);
+		var addSquare = nSquared1 + nSquared2;
+		fCounter++;
+	}
+		
+		 if(fCounter >=3)
+				{
+					
+					console.log("unhappy")
+					return "unhappy"
+
+				}
+		 if (addSquare===1)
+
+			{
+				console.log("happy")
+
+			}
+		else
+			{
+			
+			return happy(addSquare);
+
+			
+
+			}
+		
+}	
+	
 
  
  
