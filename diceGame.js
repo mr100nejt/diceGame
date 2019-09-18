@@ -1,5 +1,6 @@
 var sides = 6;
 var text ="";
+var skillCounter = 1;
 var counter = 1;
 var sucess = 0 
 var s = 6; 
@@ -18,7 +19,7 @@ function dice(sideNumber)
 }
 
 
-	begening()
+	
 function begening()
 	{	window.alert("to play type (roll) at each feat and you will roll the provided dice your goal is to roll high ")
 		window.alert("the higher you roll the better chance of sucess and maybe bonususs")
@@ -133,14 +134,17 @@ function featOfStrength(r1)
 		{
 			s = 10
 			window.alert("you pull the bow back sight and nail the target and a D8 appears in your hand")
-			 counter++;
+			 
+			 counter ++;
 			sides = 8;
+			
 		}
 		if(sucess === 2)
 		{
 			s =15
 			window.alert("you pull the bow back sight and nail the target a D10 appears in your hand")
-			sides = 10; 	
+			sides = 10;
+			
 		}
 		if(sucess >= 3)
 			{
@@ -148,9 +152,27 @@ function featOfStrength(r1)
 				counter = 0;
 				testOfKnowlege() 
 			}
+if(skillCounter ===1)
+				{										
+					skillCounter = 2
+					featOfSkill(1)
+				}
+if(skillCounter >1)
+{
+	skillCounter = 3
+	featOfSkill(1)
+	
+	
 }
+if(skillCounter===3)
+{
+	skillCouter=0
 featOfSkill(1)
-featOfSkill(1)
+
+}
+	}
+
+
 
 
 function testOfKnowlege()
@@ -208,7 +230,7 @@ function testOfKnowlege()
 				{
 					happy(action)
 					window.alert("well done a door opens")
-					counter = 0;
+					counter = 3;
 					featOfLuck() 
 				}
 			else 
@@ -229,7 +251,7 @@ function testOfKnowlege()
 		{
 			
 			let userRollL=dice(3)
-			if(counter<1)
+			if(counter===3)
 				{
 					window.alert("for this you will need some luck your goal is to roll a 2")
 				}			
@@ -242,6 +264,7 @@ function testOfKnowlege()
 					if(userRollL === 2)
 						{
 							window.alert("luck was on your side")
+							gameOver()
 						}
 
 					else
@@ -258,6 +281,7 @@ function testOfKnowlege()
 	{
 		window.alert("well done i hope you enjoyed your adveture")
 		window.alert("game over")
+		counter=100000;
 	}
 	function happy(n1)
 	{
