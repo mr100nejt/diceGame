@@ -157,19 +157,14 @@ if(skillCounter ===1)
 					skillCounter = 2
 					featOfSkill(1)
 				}
-if(skillCounter >1)
+if(skillCounter ===2)
 {
 	skillCounter = 3
 	featOfSkill(1)
 	
 	
 }
-if(skillCounter===3)
-{
-	skillCouter=0
-featOfSkill(1)
-
-}
+// 
 	}
 
 
@@ -180,13 +175,14 @@ function testOfKnowlege()
 		
 		if (counter === 0)
 		{
-		window.alert("you see an old man with a blank canvas")
+		window.alert("you see an old man with a blank canvas,two giant D100 fall in front of you")
+		
 		var p3 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
 		
 		}
 		if(counter >=1)
 		{
-			window.alert("two giant D100 fall in front of you")
+			
 			var p3 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
 		}
 
