@@ -21,9 +21,9 @@ function dice(sideNumber)
 
 	
 function begening()
-	{	window.alert("to play type (roll) at each feat and you will roll the provided dice your goal is to roll high ")
-		window.alert("the higher you roll the better chance of sucess and maybe bonususs")
-		window.alert("welcome to the arena where you will be tested in feats to test who is the most worthy to lead our world")
+	{	window.alert("To play type (roll) at each feat and you will roll the provided dice your goal is to roll high ")
+		window.alert("The higher you roll the better chance of sucess")
+		window.alert("Telcome to the arena where you will be tested in feats to test who is the most worthy to lead our world")
 		featOfStrength(3)
 	}
 
@@ -33,14 +33,14 @@ function featOfStrength(r1)
 
 		if (counter === 1)
 		{
-		window.alert("welcome to your first feat all you must do is lift the rock and put it on the pedestal")
-		var p1 =prompt("you see a large rock and a beautiful golden pedestal. a D4 appears in your hand (roll)")
+		window.alert("Welcome to your first feat all you must do is lift the rock and put it on the pedestal")
+		var p1 =prompt("You see a large rock and a beautiful golden pedestal. a D4 appears in your hand (roll)")
 		sides = 4; 
 		}
 
 		else 
 		{
-			p1 = prompt("you were close but not quite. try again. (roll")
+			p1 = prompt("You were close but not quite. try again. (roll")
 			
 		} 
 
@@ -51,7 +51,7 @@ function featOfStrength(r1)
 		{
 			case "roll":
 				
-				window.alert("your roll was " + userRollStr )
+				window.alert("Your roll was " + userRollStr )
 				
 				
 			if(userRollStr===6)
@@ -71,7 +71,7 @@ function featOfStrength(r1)
 		}	
 	if (action <= 0)		
 		{
-				window.alert("you struggle to lift the rock and you succed. As door at the end of the arena opens and you walk through")
+				window.alert("You struggle to lift the rock and you succed. As door at the end of the arena opens and you walk through")
 			counter = 1; 
 			featOfSkill(1)
 			
@@ -88,14 +88,14 @@ function featOfStrength(r1)
 
 		if (counter <= 1)
 		{
-		window.alert("welcome to your second feat all you must do is hit the targets ")
-		var p2 =prompt("you see three targets lyed out in front of you.A bow appears in your hand along with a D6. (roll)")
+		window.alert("Welcome to your second feat all you must do is hit the targets ")
+		var p2 =prompt("You see three targets lyed out in front of you.A bow appears in your hand along with a D6. (roll)")
 		sides = 6; 
 		}
 
 		else
 		{
-			p2 = prompt("you aim at the next target. (roll")
+			p2 = prompt("You aim at the next target. (roll")
 		} 
 
 		 
@@ -103,9 +103,9 @@ function featOfStrength(r1)
 		let action = r1-userRollS
 		switch(p2)
 		{
-			case "roll":
+			case "Roll":
 				
-				window.alert("your roll was " + userRollS )
+				window.alert("Your roll was " + userRollS )
 				counter++; 
 				
 			if(userRollS===6)
@@ -133,7 +133,7 @@ function featOfStrength(r1)
 		if (sucess ===1)
 		{
 			s = 10
-			window.alert("you pull the bow back sight and nail the target and a D8 appears in your hand")
+			window.alert("You pull the bow back sight and nail the target and a D8 appears in your hand")
 			 
 			 counter ++;
 			sides = 8;
@@ -142,13 +142,13 @@ function featOfStrength(r1)
 		if(sucess === 2)
 		{
 			s =15
-			window.alert("you pull the bow back sight and nail the target a D10 appears in your hand")
+			window.alert("You pull the bow back sight and nail the target a D10 appears in your hand")
 			sides = 10;
 			
 		}
 		if(sucess >= 3)
 			{
-				window.alert("well done. another door opens")	
+				window.alert("Well done. another door opens")	
 				counter = 0;
 				testOfKnowlege() 
 			}
@@ -175,15 +175,15 @@ function testOfKnowlege()
 		
 		if (counter === 0)
 		{
-		window.alert("you see an old man with a blank canvas,two giant D100 fall in front of you")
+		window.alert("You see an old man with a blank canvas,two giant D100 fall in front of you")
 		
-		var p3 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
+		var p3 =prompt("You will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
 		
 		}
 		if(counter >=1)
 		{
 			
-			var p3 =prompt("you will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
+			var p3 =prompt("You will roll the numbers will appear. Are they happy? that is for you to decide. (roll)")
 		}
 
 		
@@ -199,9 +199,9 @@ function testOfKnowlege()
 		{
 			case "roll":
 				
-				window.alert("your roll was "+userRollK)
-				window.alert("your roll was "+userRollK2)
-				var p4 = prompt("now is "+ action+ " happy")
+				window.alert("Your roll was "+userRollK)
+				window.alert("Your roll was "+userRollK2)
+				var p4 = prompt("Is "+ action+ " happy")
 				counter++; 
 				
 	switch(p4)
@@ -210,12 +210,12 @@ function testOfKnowlege()
 				
 				if(happy(action)==="happy")
 					{
-						window.alert("well done a door opens")
+						window.alert("Well done a door opens")
 						action = 0;
 					}
 				else 
 					{
-						window.alert("try again")
+						window.alert("Try again")
 						 testOfKnowlege()	
 						 action = 0;
 						
@@ -225,13 +225,13 @@ function testOfKnowlege()
 			 if(happy(action)==="unhappy")
 				{
 					happy(action)
-					window.alert("well done a door opens")
+					window.alert("Well done a door opens")
 					counter = 3;
 					featOfLuck() 
 				}
 			else 
 					{
-						window.alert("try again")
+						window.alert("Try again")
 						
 						 testOfKnowlege()	
 					}
@@ -249,9 +249,9 @@ function testOfKnowlege()
 			let userRollL=dice(3)
 			if(counter===3)
 				{
-					window.alert("for this you will need some luck your goal is to roll a 2")
+					window.alert("For this you will need some luck your goal is to roll a 2")
 				}			
-			var p5 = prompt(" a D3 appars in your hand (roll)")
+			var p5 = prompt(" A D3 appars in your hand (roll)")
 			switch(p5)
 				{
 					case"roll":
@@ -259,13 +259,13 @@ function testOfKnowlege()
 					sides = 3; 
 					if(userRollL === 2)
 						{
-							window.alert("luck was on your side")
+							window.alert("Luck was on your side")
 							gameOver()
 						}
 
 					else
 						{
-							window.alert("try again")
+							window.alert("Try again")
 							counter++ ; 
 							featOfLuck()
 						}	
@@ -275,8 +275,8 @@ function testOfKnowlege()
 
 	function gameOver()
 	{
-		window.alert("well done i hope you enjoyed your adveture")
-		window.alert("game over")
+		window.alert("Well done i hope you enjoyed your adveture")
+		window.alert("Game over")
 		counter=100000;
 	}
 	function happy(n1)
